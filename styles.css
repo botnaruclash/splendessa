@@ -52,6 +52,10 @@ nav.scrolled{
 }
 .nav-cta:hover{background:var(--rose)}
 @media(max-width:760px){
+  .hero{padding:104px 20px 36px}
+  h1{font-size:clamp(2rem,9vw,2.6rem)}
+  .hero-stats{margin-top:32px;gap:22px}
+  .stat .num{font-size:1.6rem}
   .nav-brand span{display:none}
   .nav-links{gap:18px;font-size:.85rem}
   nav{padding:16px 18px}
@@ -87,20 +91,20 @@ nav.scrolled{
 
 /* ---------- Hero ---------- */
 .hero{
-  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  padding:130px clamp(20px,6vw,80px) 60px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;justify-content:center;
+  padding:120px clamp(20px,6vw,80px) 44px;overflow:hidden;
 }
-.hero.compact{min-height:auto;padding:160px clamp(20px,6vw,80px) 40px}
+.hero.compact{padding:150px clamp(20px,6vw,80px) 36px}
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:10px;
   font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--rose-deep);margin-bottom:28px;
+  color:var(--rose-deep);margin-bottom:18px;
 }
 .hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--rose);animation:blink 2s ease infinite}
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
 h1{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(2.5rem,7vw,6rem);line-height:1.04;letter-spacing:-.015em;max-width:14ch;
+  font-size:clamp(2.2rem,5.2vw,4.4rem);line-height:1.06;letter-spacing:-.015em;max-width:16ch;
 }
 h1 em{
   font-style:italic;font-weight:400;
@@ -108,11 +112,11 @@ h1 em{
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .hero-sub{
-  max-width:48ch;font-size:clamp(1.05rem,1.4vw,1.25rem);
-  color:var(--grey);line-height:1.65;margin:32px 0 44px;
+  max-width:48ch;font-size:clamp(1rem,1.3vw,1.15rem);
+  color:var(--grey);line-height:1.6;margin:22px 0 30px;
 }
 .hero-actions{display:flex;gap:18px;flex-wrap:wrap}
-.hero-stats{display:flex;gap:clamp(28px,5vw,64px);margin-top:64px;flex-wrap:wrap;opacity:0;animation:statsIn 1.2s cubic-bezier(.22,1,.36,1) 1.1s forwards}
+.hero-stats{display:flex;gap:clamp(28px,5vw,64px);margin-top:42px;flex-wrap:wrap;opacity:0;animation:statsIn 1.2s cubic-bezier(.22,1,.36,1) .9s forwards}
 @keyframes statsIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 .stat .num{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:500}
 .stat .num sup{font-size:.55em;color:var(--rose)}

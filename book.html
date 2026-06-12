@@ -58,14 +58,14 @@
           <span><strong>Zero pressure</strong> — no contracts on the call, no follow-up spam. We solve problems; the rest follows.</span>
         </div>
       </div>
+      <div class="audit-card" style="margin-top:34px;margin-bottom:0" id="auditCard" hidden>
+        <div class="al">Your quick audit result</div>
+        <div class="av" id="auditVal">$0</div>
+        <div class="an">Estimated annual revenue exposure — pre-filled in the form</div>
+      </div>
     </div>
 
     <div class="reveal">
-    <div class="audit-card" id="auditCard" style="display:none">
-      <div class="al">Your quick audit result</div>
-      <div class="av" id="auditVal">$0</div>
-      <div class="an">Estimated annual revenue exposure — pre-filled below</div>
-    </div>
     <div class="book-form">
       <div class="field">
         <label for="fName">Your name</label>
@@ -135,7 +135,7 @@ try {
   const audit = JSON.parse(localStorage.getItem('splendessa_audit') || 'null');
   if (audit && audit.annual) {
     const money = '$' + audit.annual.toLocaleString('en-US');
-    document.getElementById('auditCard').style.display = 'block';
+    document.getElementById('auditCard').hidden = false;
     document.getElementById('auditVal').textContent = money;
     document.getElementById('fMessage').value =
       'Our estimated annual exposure is ' + money + '. We receive enquiries but lose too many to slow response...';
