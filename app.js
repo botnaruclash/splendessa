@@ -60,7 +60,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 /* Counters (home hero) */
 function runCounters(){
   document.querySelectorAll('.count').forEach(el => {
-    const target = +el.dataset.target, dur = 1400, start = performance.now();
+    const target = +el.dataset.target, dur = 2200, start = performance.now();
     (function tick(now){
       const p = Math.min((now - start) / dur, 1);
       el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
@@ -68,4 +68,4 @@ function runCounters(){
     })(performance.now());
   });
 }
-if (document.querySelector('.count')) setTimeout(runCounters, 600);
+if (document.querySelector('.count')) setTimeout(runCounters, 1500);
