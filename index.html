@@ -24,6 +24,7 @@
   <div class="nav-links">
     <a href="diagnostic.html">Diagnostic</a>
     <a href="roadmap.html">Roadmap</a>
+    <a href="book.html">Book a call</a>
   </div>
 </nav>
 
@@ -222,6 +223,7 @@ function quizCalc(){
   const attr = +document.querySelector('#qTime .pill.selected').dataset.v;
   const annual = leads * attr * ATV * 12;
   animateMoney(document.getElementById('quizMoney'), annual);
+  try { localStorage.setItem('splendessa_audit', JSON.stringify({ annual: Math.round(annual), leads, date: Date.now() })); } catch(e){}
 }
 let moneyAnim;
 function animateMoney(el, target){

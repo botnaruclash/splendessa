@@ -52,8 +52,10 @@ nav.scrolled{
 }
 .nav-cta:hover{background:var(--rose)}
 @media(max-width:760px){
-  .nav-links a:not(.nav-cta){display:none}
   .nav-brand span{display:none}
+  .nav-links{gap:18px;font-size:.85rem}
+  nav{padding:16px 18px}
+  nav.scrolled{padding:12px 18px}
 }
 
 /* ---------- Buttons ---------- */
@@ -355,6 +357,19 @@ input[type=range]::-moz-range-thumb{
 .book-points .bp{display:flex;gap:16px;align-items:flex-start;color:#3A3A3A;line-height:1.6}
 .book-points .bp svg{flex:none;margin-top:4px}
 .form-note{font-size:.85rem;color:var(--grey);margin-top:16px;text-align:center}
+
+/* ---------- Audit result card (book page) ---------- */
+.audit-card{
+  background:var(--white);border:1px solid rgba(17,17,17,.08);border-radius:24px;
+  padding:32px 36px;margin-bottom:30px;box-shadow:0 20px 50px -24px rgba(17,17,17,.14);
+}
+.audit-card .al{font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.audit-card .av{
+  font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;margin-top:10px;
+  background:linear-gradient(120deg,var(--rose-light),var(--rose-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.audit-card .an{font-size:.88rem;color:var(--grey);margin-top:8px}
 
 /* ---------- CTA ---------- */
 .cta-final{padding-bottom:clamp(70px,8vw,110px)}

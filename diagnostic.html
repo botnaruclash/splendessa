@@ -24,6 +24,7 @@
   <div class="nav-links">
     <a href="diagnostic.html" class="active">Diagnostic</a>
     <a href="roadmap.html">Roadmap</a>
+    <a href="book.html">Book a call</a>
   </div>
 </nav>
 
@@ -183,6 +184,7 @@ function calc(){
   document.getElementById('monthlyCost').textContent = '$' + Math.round(monthly).toLocaleString('en-US');
   document.getElementById('attrRate').textContent = Math.round(w.attr * 100) + '%';
   document.getElementById('respWindow').textContent = w.label;
+  try { localStorage.setItem('splendessa_audit', JSON.stringify({ annual: Math.round(annual), leads, date: Date.now() })); } catch(e){}
 }
 leadsRange.addEventListener('input', calc);
 timeRange.addEventListener('input', calc);

@@ -24,6 +24,7 @@
   <div class="nav-links">
     <a href="diagnostic.html">Diagnostic</a>
     <a href="roadmap.html">Roadmap</a>
+    <a href="book.html" class="active">Book a call</a>
   </div>
 </nav>
 
@@ -59,7 +60,13 @@
       </div>
     </div>
 
-    <div class="book-form reveal">
+    <div class="reveal">
+    <div class="audit-card" id="auditCard" style="display:none">
+      <div class="al">Your quick audit result</div>
+      <div class="av" id="auditVal">$0</div>
+      <div class="an">Estimated annual revenue exposure — pre-filled below</div>
+    </div>
+    <div class="book-form">
       <div class="field">
         <label for="fName">Your name</label>
         <input id="fName" type="text" placeholder="Dr. Sarah Mitchell" autocomplete="name">
@@ -77,11 +84,22 @@
         <input id="fWebsite" type="url" placeholder="https://radiancemedspa.com">
       </div>
       <div class="field">
+        <label for="fVolume">Monthly lead volume</label>
+        <select id="fVolume">
+          <option value="" disabled selected>Select monthly lead volume</option>
+          <option>Under 20 high-ticket enquiries / month</option>
+          <option>20–50 enquiries / month</option>
+          <option>50–100 enquiries / month</option>
+          <option>100+ enquiries / month</option>
+        </select>
+      </div>
+      <div class="field">
         <label for="fMessage">What's your biggest challenge right now?</label>
         <textarea id="fMessage" rows="4" placeholder="We get enquiries but they don't turn into bookings..."></textarea>
       </div>
       <button class="btn btn-primary" id="submitBtn">Request my strategy call <span class="arrow">→</span></button>
       <p class="form-note" id="formNote">We reply within one business day.</p>
+    </div>
     </div>
   </div>
 </section>
@@ -112,12 +130,30 @@
 */
 const SCRIPT_URL = '';
 
+/* Pre-fill from quiz/diagnostic result */
+try {
+  const audit = JSON.parse(localStorage.getItem('splendessa_audit') || 'null');
+  if (audit && audit.annual) {
+    const money = '$' + audit.annual.toLocaleString('en-US');
+    document.getElementById('auditCard').style.display = 'block';
+    document.getElementById('auditVal').textContent = money;
+    document.getElementById('fMessage').value =
+      'Our estimated annual exposure is ' + money + '. We receive enquiries but lose too many to slow response...';
+    const vol = document.getElementById('fVolume');
+    if (audit.leads <= 20) vol.selectedIndex = 1;
+    else if (audit.leads <= 50) vol.selectedIndex = 2;
+    else if (audit.leads <= 100) vol.selectedIndex = 3;
+    else vol.selectedIndex = 4;
+  }
+} catch(e){}
+
 document.getElementById('submitBtn').addEventListener('click', async () => {
   const data = {
     name:    document.getElementById('fName').value.trim(),
     clinic:  document.getElementById('fClinic').value.trim(),
     email:   document.getElementById('fEmail').value.trim(),
     website: document.getElementById('fWebsite').value.trim(),
+    volume:  document.getElementById('fVolume').value,
     message: document.getElementById('fMessage').value.trim(),
     page:    'book',
     date:    new Date().toISOString(),
@@ -144,7 +180,7 @@ document.getElementById('submitBtn').addEventListener('click', async () => {
       + '?subject=' + encodeURIComponent('Strategy call — ' + (data.clinic || data.name))
       + '&body=' + encodeURIComponent(
         'Name: ' + data.name + '\nClinic: ' + data.clinic + '\nEmail: ' + data.email
-        + '\nWebsite: ' + data.website + '\n\n' + data.message);
+        + '\nWebsite: ' + data.website + '\nLead volume: ' + data.volume + '\n\n' + data.message);
   }
 });
 </script>
