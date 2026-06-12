@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Strategy Call — Splendessa</title>
+<meta name="description" content="Book a free 30-minute strategy call with Splendessa. We'll audit your med spa's website and show you what's costing you bookings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="lgN" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C97B8C"/><stop offset="1" stop-color="#A8525F"/></linearGradient></defs>
+      <rect width="100" height="100" rx="30" fill="url(#lgN)"/>
+      <path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Splendessa</span>
+  </a>
+  <div class="nav-links">
+    <a href="diagnostic.html">Diagnostic</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="book.html" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<header class="hero compact">
+  <div class="orb orb-1"></div>
+  <div style="position:relative;z-index:2;max-width:980px">
+    <div class="hero-eyebrow"><span class="dot"></span> Free 30-minute strategy call</div>
+    <h1 style="font-size:clamp(2.3rem,5.5vw,4.4rem)">Let's find what's costing you <em>bookings</em>.</h1>
+  </div>
+</header>
+
+<section style="padding-top:30px">
+  <div class="book-wrap">
+    <div class="reveal">
+      <h2 style="font-size:clamp(1.6rem,3vw,2.4rem)">What happens on the call</h2>
+      <div class="book-points">
+        <div class="bp">
+          <svg width="20" height="20" viewBox="0 0 100 100"><path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#BF6073" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Live audit of your current website</strong> — we review it together and point out exactly where visitors drop off before booking.</span>
+        </div>
+        <div class="bp">
+          <svg width="20" height="20" viewBox="0 0 100 100"><path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#BF6073" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Your revenue leak, quantified</strong> — based on your real enquiry volume and response time, not generic numbers.</span>
+        </div>
+        <div class="bp">
+          <svg width="20" height="20" viewBox="0 0 100 100"><path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#BF6073" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>A clear plan</strong> — what to fix first and what results to expect. If we're not the right fit, we'll tell you.</span>
+        </div>
+        <div class="bp">
+          <svg width="20" height="20" viewBox="0 0 100 100"><path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#BF6073" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong>Zero pressure</strong> — no contracts on the call, no follow-up spam. We solve problems; the rest follows.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-form reveal">
+      <div class="field">
+        <label for="fName">Your name</label>
+        <input id="fName" type="text" placeholder="Dr. Sarah Mitchell" autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fClinic">Clinic name</label>
+        <input id="fClinic" type="text" placeholder="Radiance Med Spa" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="fEmail">Email</label>
+        <input id="fEmail" type="email" placeholder="sarah@radiancemedspa.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="fWebsite">Current website <span style="color:var(--grey);font-weight:400">(optional)</span></label>
+        <input id="fWebsite" type="url" placeholder="https://radiancemedspa.com">
+      </div>
+      <div class="field">
+        <label for="fMessage">What's your biggest challenge right now?</label>
+        <textarea id="fMessage" rows="4" placeholder="We get enquiries but they don't turn into bookings..."></textarea>
+      </div>
+      <button class="btn btn-primary" id="submitBtn">Request my strategy call <span class="arrow">→</span></button>
+      <p class="form-note" id="formNote">We reply within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="nav-brand">
+    <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C97B8C"/><stop offset="1" stop-color="#A8525F"/></linearGradient></defs>
+      <rect width="100" height="100" rx="30" fill="url(#lgF)"/>
+      <path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Splendessa
+  </a>
+  <div class="foot-links">
+    <a href="diagnostic.html">Diagnostic</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="mailto:hello@splendessa.com">hello@splendessa.com</a>
+  </div>
+  <p>© 2026 Splendessa. Websites for med spas &amp; aesthetic clinics.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+/*
+  HOOK IT UP: paste your Google Apps Script Web App URL below
+  (same flow as your existing booking form → Google Sheets).
+  Leave empty and the form falls back to opening an email draft.
+*/
+const SCRIPT_URL = '';
+
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const data = {
+    name:    document.getElementById('fName').value.trim(),
+    clinic:  document.getElementById('fClinic').value.trim(),
+    email:   document.getElementById('fEmail').value.trim(),
+    website: document.getElementById('fWebsite').value.trim(),
+    message: document.getElementById('fMessage').value.trim(),
+    page:    'book',
+    date:    new Date().toISOString(),
+  };
+  const note = document.getElementById('formNote');
+  if (!data.name || !data.email) {
+    note.textContent = 'Please add your name and email so we can reach you.';
+    note.style.color = 'var(--rose-deep)';
+    return;
+  }
+  if (SCRIPT_URL) {
+    note.textContent = 'Sending...'; note.style.color = 'var(--grey)';
+    try {
+      await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+      note.textContent = '✓ Request received — check your inbox shortly.';
+      note.style.color = 'var(--rose-deep)';
+      document.getElementById('submitBtn').textContent = 'Request sent';
+    } catch (e) {
+      note.textContent = 'Something went wrong — email us at hello@splendessa.com.';
+      note.style.color = 'var(--rose-deep)';
+    }
+  } else {
+    location.href = 'mailto:hello@splendessa.com'
+      + '?subject=' + encodeURIComponent('Strategy call — ' + (data.clinic || data.name))
+      + '&body=' + encodeURIComponent(
+        'Name: ' + data.name + '\nClinic: ' + data.clinic + '\nEmail: ' + data.email
+        + '\nWebsite: ' + data.website + '\n\n' + data.message);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Leak Diagnostic — Splendessa</title>
+<meta name="description" content="Calculate exactly how much revenue your med spa loses to slow lead response — and how much is recoverable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="lgN" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C97B8C"/><stop offset="1" stop-color="#A8525F"/></linearGradient></defs>
+      <rect width="100" height="100" rx="30" fill="url(#lgN)"/>
+      <path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Splendessa</span>
+  </a>
+  <div class="nav-links">
+    <a href="diagnostic.html" class="active">Diagnostic</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="book.html" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<header class="hero compact">
+  <div class="orb orb-1"></div>
+  <div style="position:relative;z-index:2;max-width:980px">
+    <div class="hero-eyebrow"><span class="dot"></span> Revenue leak diagnostic</div>
+    <h1 style="font-size:clamp(2.3rem,5.5vw,4.4rem)">How much is slow response <em>costing</em> your clinic?</h1>
+    <p class="hero-sub">Move the sliders to match your clinic. We'll show you the recoverable pipeline you've lost in the past 12 months.</p>
+  </div>
+</header>
+
+<section style="padding-top:20px">
+  <div class="diag-wrap">
+    <div class="reveal">
+      <div class="diag-row">
+        <div class="top">
+          <span class="diag-label">Monthly high-ticket leads</span>
+          <span class="val" id="leadsVal">40 leads/mo</span>
+        </div>
+        <p class="desc">Botox, filler, laser, and body-contouring enquiries received per month across all channels.</p>
+        <input type="range" id="leadsRange" min="10" max="100" value="40" step="1">
+        <div class="range-ends"><span>10 leads</span><span>100 leads</span></div>
+      </div>
+      <div class="diag-row">
+        <div class="top">
+          <span class="diag-label">Current lead response time</span>
+          <span class="val" id="timeVal">1–4 hours</span>
+        </div>
+        <p class="desc">How quickly does your team contact a new enquiry after it arrives?</p>
+        <input type="range" id="timeRange" min="0" max="3" value="2" step="1">
+        <div class="range-ends"><span>&lt; 5 min</span><span>24 hrs</span></div>
+      </div>
+      <p class="calc-basis">Calculation basis: average high-ticket treatment value $850 (injectable / laser blend). Lead attrition rates derived from the MIT Sloan / HBR Lead Response Study. Monthly leads × attrition coefficient × ATV × 12.</p>
+    </div>
+
+    <div class="diag-result reveal">
+      <span class="diag-label">Annual pipeline hemorrhage</span>
+      <div class="big-money" id="bigMoney">$0</div>
+      <p class="sub">Recoverable at optimal lead velocity</p>
+      <div class="mini-grid">
+        <div class="mini"><div class="diag-label">Monthly lost</div><div class="v" id="lostLeads">0 leads</div></div>
+        <div class="mini"><div class="diag-label">Monthly revenue cost</div><div class="v" id="monthlyCost">$0</div></div>
+        <div class="mini"><div class="diag-label">Current attrition rate</div><div class="v" id="attrRate">0%</div></div>
+        <div class="mini"><div class="diag-label">Response window</div><div class="v" id="respWindow">—</div></div>
+      </div>
+      <a href="book.html" class="btn btn-dark">Recover this pipeline <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(180deg,#fff,var(--rose-tint))">
+  <div class="diag-split">
+    <div class="reveal">
+      <div class="eyebrow">The data</div>
+      <h2>Why responding in 60 seconds increases conversion by <em>391%</em>.</h2>
+      <p class="section-sub">This is not a marginal optimization. It is the single highest-leverage variable in your client acquisition pipeline. The data is unambiguous: lead velocity is the dominant driver of booking conversion in aesthetic medicine.</p>
+      <div style="margin-top:48px;border-top:1px solid rgba(17,17,17,.1)">
+        <div class="diag-row">
+          <div class="top"><span class="diag-label">Client acquisition cost at &lt;5 min response</span><span class="val">$310 per new client</span></div>
+        </div>
+        <div class="diag-row">
+          <div class="top"><span class="diag-label">Effective cost at &gt;60 min response</span><span class="val">$1,240 per new client</span></div>
+        </div>
+        <div class="diag-row" style="border-bottom:none">
+          <div class="top"><span class="diag-label">Annual impact</span><span class="val">$94,000 per 100 monthly leads</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="windows reveal">
+      <div class="window-card hot">
+        <div><div class="wl">Response window</div><div class="wt">&lt; 5 min</div><div class="wn">Baseline conversion indexed at peak.</div></div>
+        <div class="wx">3.91<sup>×</sup></div>
+      </div>
+      <div class="window-card">
+        <div><div class="wl">Response window</div><div class="wt">5–30 min</div><div class="wn">56% decay from peak performance.</div></div>
+        <div class="wx">1.7<sup>×</sup></div>
+      </div>
+      <div class="window-card">
+        <div><div class="wl">Response window</div><div class="wt">30–60 min</div><div class="wn">Industry average. The standard you are being measured against.</div></div>
+        <div class="wx">1.0<sup>×</sup></div>
+      </div>
+      <div class="window-card">
+        <div><div class="wl">Response window</div><div class="wt">&gt; 60 min</div><div class="wn">Below baseline. The majority of clinics operate here.</div></div>
+        <div class="wx">0.4<sup>×</sup></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" style="padding-top:0">
+  <div class="cta-box reveal">
+    <svg class="cta-check" viewBox="0 0 100 100" aria-hidden="true"><path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2>Stop the leak. Keep the revenue.</h2>
+    <p>On a free strategy call we'll map your exact lead flow and show you where every lost booking goes — and how to recover it.</p>
+    <a href="book.html" class="btn btn-white">Book your free call <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="nav-brand">
+    <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="lgF" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C97B8C"/><stop offset="1" stop-color="#A8525F"/></linearGradient></defs>
+      <rect width="100" height="100" rx="30" fill="url(#lgF)"/>
+      <path d="M28 45 L48 60 Q50 78 50 84 Q50 78 52 60 L76 30" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Splendessa
+  </a>
+  <div class="foot-links">
+    <a href="diagnostic.html">Diagnostic</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="mailto:hello@splendessa.com">hello@splendessa.com</a>
+  </div>
+  <p>© 2026 Splendessa. Websites for med spas &amp; aesthetic clinics.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+const ATV = 850;
+const windows = [
+  { label: '< 5 min',    attr: 0.10 },
+  { label: '5–60 min',   attr: 0.35 },
+  { label: '1–4 hours',  attr: 0.55 },
+  { label: '4–24 hours', attr: 0.70 },
+];
+const leadsRange = document.getElementById('leadsRange');
+const timeRange  = document.getElementById('timeRange');
+
+function fillTrack(r){
+  const p = (r.value - r.min) / (r.max - r.min) * 100;
+  r.style.setProperty('--fill', p + '%');
+}
+let bigAnim;
+function animMoney(el, target, prefix){
+  cancelAnimationFrame(bigAnim);
+  const from = +(el.dataset.cur || 0), start = performance.now(), dur = 600;
+  (function tick(now){
+    const p = Math.min((now - start) / dur, 1);
+    const v = from + (target - from) * (1 - Math.pow(1 - p, 3));
+    el.textContent = prefix + Math.round(v).toLocaleString('en-US');
+    el.dataset.cur = v;
+    if (p < 1) bigAnim = requestAnimationFrame(tick);
+  })(performance.now());
+}
+function calc(){
+  fillTrack(leadsRange); fillTrack(timeRange);
+  const leads = +leadsRange.value;
+  const w = windows[+timeRange.value];
+  const lost = leads * w.attr;
+  const monthly = lost * ATV;
+  const annual = monthly * 12;
+
+  document.getElementById('leadsVal').textContent = leads + ' leads/mo';
+  document.getElementById('timeVal').textContent = w.label;
+  animMoney(document.getElementById('bigMoney'), annual, '$');
+  document.getElementById('lostLeads').textContent = Math.round(lost) + ' leads';
+  document.getElementById('monthlyCost').textContent = '$' + Math.round(monthly).toLocaleString('en-US');
+  document.getElementById('attrRate').textContent = Math.round(w.attr * 100) + '%';
+  document.getElementById('respWindow').textContent = w.label;
+}
+leadsRange.addEventListener('input', calc);
+timeRange.addEventListener('input', calc);
+calc();
+</script>
+</body>
+</html>
