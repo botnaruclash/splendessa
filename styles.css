@@ -1,4 +1,4 @@
-/* SPLENDESSA BUILD v17 — hero fine-tune */
+/* SPLENDESSA BUILD v18 — thicker band + spacing */
 :root{
   --white:#FFFFFF;
   --rose:#BF6073;
@@ -420,8 +420,8 @@ footer .foot-links a:hover{color:var(--rose)}
   .stat .num{font-size:1.85rem}
   .stat .label{font-size:.8rem;margin-top:4px;line-height:1.35;padding-right:8px}
   .hero-check{display:none}
-  .marquee{padding:18px 0;margin-top:0}
-  .marquee-item{font-size:1.25rem;gap:16px;padding:0 20px}
+  .marquee{padding:24px 0;margin-top:0;margin-bottom:22px}
+  .marquee-item{font-size:1.3rem;gap:18px;padding:0 22px}
   .marquee:hover .marquee-track{animation-play-state:running}
 
   /* --- services: 1 per row --- */
