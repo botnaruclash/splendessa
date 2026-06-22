@@ -1,4 +1,4 @@
-/* SPLENDESSA BUILD v12 — bigger text, full-screen hero */
+/* SPLENDESSA BUILD v13 — less top gap, bigger text */
 :root{
   --white:#FFFFFF;
   --rose:#BF6073;
@@ -407,18 +407,18 @@ footer .foot-links a:hover{color:var(--rose)}
   nav.scrolled{padding:10px 18px}
 
   /* --- hero: fit everything + marquee in first screen --- */
-  .hero{padding:96px 20px 32px;justify-content:center;min-height:90svh}
+  .hero{padding:74px 20px 30px;justify-content:flex-start}
   .hero-eyebrow{font-size:.74rem;margin-bottom:18px;letter-spacing:.1em}
-  h1{font-size:2.4rem;line-height:1.08}
-  .hero-sub{font-size:1.05rem;line-height:1.55;margin:22px 0 30px}
-  .hero .btn{padding:17px 32px;font-size:1.02rem}
+  h1{font-size:2.55rem;line-height:1.07}
+  .hero-sub{font-size:1.12rem;line-height:1.55;margin:22px 0 30px}
+  .hero .btn{padding:18px 34px;font-size:1.08rem}
   .hero-stats{margin-top:40px;gap:0;justify-content:space-between;width:100%}
   .hero-stats .stat{flex:1;min-width:0}
-  .stat .num{font-size:1.65rem}
-  .stat .label{font-size:.74rem;margin-top:4px;line-height:1.35;padding-right:8px}
+  .stat .num{font-size:1.8rem}
+  .stat .label{font-size:.8rem;margin-top:4px;line-height:1.35;padding-right:8px}
   .hero-check{display:none}
   .marquee{padding:18px 0;margin-top:0}
-  .marquee-item{font-size:1.15rem;gap:14px;padding:0 18px}
+  .marquee-item{font-size:1.25rem;gap:16px;padding:0 20px}
   .marquee:hover .marquee-track{animation-play-state:running}
 
   /* --- services: 1 per row --- */
@@ -426,29 +426,29 @@ footer .foot-links a:hover{color:var(--rose)}
   .service-card{padding:32px 26px;border-radius:22px}
   .service-icon{width:54px;height:54px;border-radius:16px;margin-bottom:20px}
   .service-icon svg{width:26px;height:26px}
-  .service-card h3{font-size:1.4rem;margin-bottom:12px}
-  .service-card p{font-size:1.02rem;line-height:1.6}
+  .service-card h3{font-size:1.5rem;margin-bottom:12px}
+  .service-card p{font-size:1.1rem;line-height:1.6}
 
   /* --- quiz: 2 pills per row, compact --- */
   .quiz-card{padding:24px 18px;border-radius:24px}
   .quiz-label{font-size:.68rem;margin:22px 0 12px}
   .pill-row{grid-template-columns:repeat(2,1fr);gap:10px}
   .pill{padding:18px 12px;border-radius:16px}
-  .pill .big{font-size:1.3rem}
-  .pill .small{font-size:.82rem;margin-top:4px}
+  .pill .big{font-size:1.45rem}
+  .pill .small{font-size:.9rem;margin-top:4px}
   .quiz-result{margin-top:26px;padding-top:24px;gap:18px}
-  .quiz-result .lead-num{font-size:2.6rem}
+  .quiz-result .lead-num{font-size:3rem}
   .quiz-result .lead-note{font-size:.8rem}
 
   /* --- general section sizing (mobile) --- */
-  section{padding:54px 20px}
-  .section-head{margin-bottom:32px}
-  h2{font-size:2rem}
-  .section-sub{font-size:1.05rem;margin-top:14px}
-  .eyebrow{font-size:.78rem}
+  section{padding:42px 20px}
+  .section-head{margin-bottom:28px}
+  h2{font-size:2.2rem}
+  .section-sub{font-size:1.12rem;margin-top:14px}
+  .eyebrow{font-size:.82rem}
   .steps .step{padding:28px 22px}
-  .step h3{font-size:1.18rem}
-  .step p{font-size:1rem}
-  .faq-q{font-size:1.12rem;padding:24px 40px 24px 2px}
-  .faq-a p{font-size:1rem}
+  .step h3{font-size:1.25rem}
+  .step p{font-size:1.05rem}
+  .faq-q{font-size:1.2rem;padding:24px 40px 24px 2px}
+  .faq-a p{font-size:1.05rem}
 }
