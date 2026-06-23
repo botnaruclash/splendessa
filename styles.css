@@ -1,4 +1,22 @@
-/* SPLENDESSA BUILD v22 — perf: async fonts, small logo, main */
+/* SPLENDESSA BUILD v23 — perf: zero-CLS font fallbacks */
+/* Metric-matched fallbacks: occupy identical space to the web fonts so
+   there is no layout shift when Fraunces/Outfit swap in. */
+@font-face{
+  font-family:'Fraunces Fallback';
+  src:local('Georgia');
+  size-adjust:98.49%;
+  ascent-override:99.30%;
+  descent-override:25.89%;
+  line-gap-override:0%;
+}
+@font-face{
+  font-family:'Outfit Fallback';
+  src:local('Arial');
+  size-adjust:85.41%;
+  ascent-override:117.08%;
+  descent-override:30.44%;
+  line-gap-override:0%;
+}
 :root{
   --white:#FFFFFF;
   --rose:#BF6073;
@@ -7,8 +25,8 @@
   --rose-tint:#F9EEF1;
   --onyx:#111111;
   --grey:#6B6B6B;
-  --display:'Fraunces',serif;
-  --body:'Outfit',sans-serif;
+  --display:'Fraunces','Fraunces Fallback',Georgia,serif;
+  --body:'Outfit','Outfit Fallback',Arial,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
