@@ -30,10 +30,21 @@ if (!reduceMotion) {
 
 /* Parallax orbs */
 if (!reduceMotion) {
-  addEventListener('scroll', () => {
-    document.querySelectorAll('.orb-1').forEach(o => o.style.transform = `translateY(${scrollY*0.12}px)`);
-    document.querySelectorAll('.orb-2').forEach(o => o.style.transform = `translateY(${-scrollY*0.08}px)`);
-  }, { passive: true });
+  const orb1 = document.querySelectorAll('.orb-1');
+  const orb2 = document.querySelectorAll('.orb-2');
+  if (orb1.length || orb2.length) {
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = scrollY;
+        orb1.forEach(o => o.style.transform = `translateY(${y*0.12}px)`);
+        orb2.forEach(o => o.style.transform = `translateY(${-y*0.08}px)`);
+        ticking = false;
+      });
+    }, { passive: true });
+  }
 }
 
 /* Marquee seamless loop */
