@@ -1,4 +1,4 @@
-/* SPLENDESSA BUILD v20 — proper favicons */
+/* SPLENDESSA BUILD v21 — new full logo */
 :root{
   --white:#FFFFFF;
   --rose:#BF6073;
@@ -37,6 +37,7 @@ nav.scrolled{
 }
 .nav-brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:1.35rem;font-weight:500;letter-spacing:.01em;flex:none}
 .nav-brand .logo-mark{width:38px;height:38px;transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+img.logo-mark{object-fit:contain;display:block}
 .nav-brand:hover .logo-mark{transform:rotate(-8deg) scale(1.06)}
 .nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,36px);font-size:.92rem;font-weight:500}
 .nav-links a{position:relative;padding:4px 0;white-space:nowrap}
