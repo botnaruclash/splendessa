@@ -1,4 +1,4 @@
-/* SPLENDESSA BUILD v24 — perf: inline CSS, lazy fonts */
+/* SPLENDESSA BUILD v25 — revert to v23 + scroll opt */
 /* Metric-matched fallbacks: occupy identical space to the web fonts so
    there is no layout shift when Fraunces/Outfit swap in. */
 @font-face{
